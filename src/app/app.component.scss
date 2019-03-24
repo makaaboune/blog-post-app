@@ -1,0 +1,10 @@
+:host {
+    mat-toolbar {
+        display: flex;
+        justify-content: space-between;
+        span{
+            font-size: 14px;
+            font-weight: bold
+        }
+    }
+}

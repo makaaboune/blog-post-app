@@ -1,0 +1,46 @@
+:host {
+    display: block;
+    margin: 15px;
+    .mat-card {
+        background: #42424221;
+         color: #443e3e;
+         transition:all 0.5s ease; 
+         .mat-card-subtitle {
+            color: #212121;
+        }
+        ::ng-deep{
+            .mat-card-header-text{
+                margin: 0;
+                width: 100%;
+                display: flex;
+                justify-content: space-between
+            }
+        }
+    }
+    .love-it{
+        background: #75ef2045;
+        color: #1f4a0b;   
+        transition:all 0.5s ease; 
+
+    }
+    .love-it-button {
+        background-color: #18a02a;
+        margin-right: 10px!important;
+        ::ng-deep {
+            .mat-badge-content{
+                background-color: #095413;
+                color:#fff
+            }
+        }
+
+    }
+
+    .dont-love-it{
+        background: #e8281b7a;
+        color: #610c07;  
+        transition:all 0.5s ease; 
+     }
+     .dont-love-it-button {
+    }
+}
+
