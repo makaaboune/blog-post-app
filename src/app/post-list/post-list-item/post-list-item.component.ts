@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Post } from '../post.model';
+import { PostService } from 'src/app/services/post/post.service';
 
 @Component({
   selector: 'app-post-list-item',
@@ -8,21 +9,23 @@ import { Post } from '../post.model';
 })
 export class PostListItemComponent implements OnInit {
   @Input() post: Post = null;
-  constructor() { }
+  @Input() postIndex = 0;
+  constructor(
+    public postService: PostService
+  ) { }
 
   ngOnInit() {
   }
 
 // Increment number of loveIts on button click
-  onLoveIts(post) {
-    post.loveIts++;
+  onLoveIts(post, postIndex) {
+    this.postService.lovePost(post, postIndex);
   }
 
 // Increment number of DontLoveIts on button click
-// It's optional ! you can just decrement number of loveIts
-  onDontLoveIts(post) {
-    post.dontLoveIts++;
-  }
+  onDontLoveIts(post, postIndex) {
+    this.postService.dontLovePost(post, postIndex);
+    }
 
 // Get number of DontLoveIts to display it in the badge
   getDontLoveIts() {
@@ -33,5 +36,8 @@ export class PostListItemComponent implements OnInit {
   getLoveIts() {
     return this.post.loveIts;
   }
-
+// Delete selected post
+  onDeletePost(post: Post) {
+    this.postService.removePost(post);
+  }
 }

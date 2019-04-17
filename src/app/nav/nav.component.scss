@@ -1,0 +1,27 @@
+:host {
+    position: relative;
+    display: block;
+    height: 64px;
+    mat-toolbar {
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+        background: #212121cf;
+        .left-nav {
+            height: 100%;
+            & > * {
+                transition: .8s ease;
+                height: 100%;
+                border-radius: 0;
+            }
+        }
+    }
+    .active {
+        background: #cccccc2b;
+        border-radius: 0;
+        color: #fafafa
+    }
+}

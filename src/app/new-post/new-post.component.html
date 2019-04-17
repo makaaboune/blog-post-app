@@ -1,0 +1,31 @@
+<div class="form-container">
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()" class="post-form">
+    <div class="post-form_title">
+      <h2>Add new Post</h2>
+      <div class="post-form_title_line"></div>
+    </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input 
+      matInput
+      formControlName="title" 
+      placeholder="Post title">
+      <mat-icon matSuffix>notes</mat-icon>
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Content</mat-label>
+      <textarea 
+      class="content"
+      rows="8"
+      matInput
+      formControlName="content" 
+      placeholder="Post content">
+      </textarea>
+      <mat-icon matSuffix class="textarea-icon">notes</mat-icon>
+    </mat-form-field>  
+    <button mat-raised-button [disabled]="postForm.invalid">
+      Add
+    </button>
+  </form>
+</div>

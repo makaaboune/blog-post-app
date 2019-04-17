@@ -1,6 +1,5 @@
-
 <mat-card 
-[ngClass]="{'love-it': post.loveIts > post.dontLoveIts, 'dont-love-it':post.loveIts < post.dontLoveIts}">
+  [ngClass]="{'love-it': post.loveIts > post.dontLoveIts, 'dont-love-it':post.loveIts < post.dontLoveIts}">
   <mat-card-header>
     <mat-card-title>{{post.title}}</mat-card-title>
     <mat-card-subtitle>{{post.createdAt | date:'short'}}</mat-card-subtitle>
@@ -11,24 +10,40 @@
     </p>
   </mat-card-content>
   <mat-card-actions>
-    <button 
+    <div class="rating-block">
+      <button 
+       title="Love it"
+        mat-raised-button 
+        class="love-it-button"
+        color="primary" 
+        (click)="onLoveIts(post,postIndex)"
+        [matBadge]="getLoveIts()" 
+        matBadgePosition="after" 
+        matBadgeColor="#065405fa"
+        >
+        Love it
+    </button>
+      <button 
+        title="Don't love it"
+        class="dont-love-it-button"
+        [matBadge]="getDontLoveIts()" 
+        matBadgePosition="after" 
+        matBadgeColor="primary"
+        mat-raised-button 
+        color="warn" 
+        (click)="onDontLoveIts(post,postIndex)"
+        >
+        Don't love it
+    </button>
+    </div>
+  <button 
+    title="Delete post"
+    (click)="onDeletePost(post)"
+    class="delete-button"
     mat-raised-button 
-    class="love-it-button"
-    color="primary" 
-    (click)="onLoveIts(post)"
-    [matBadge]="getLoveIts()" 
-    matBadgePosition="after" 
-    matBadgeColor="#065405fa">
-    Love it
-  </button>
-    <button 
-    [matBadge]="getDontLoveIts()" 
-    matBadgePosition="after" 
-    matBadgeColor="primary"
-    mat-raised-button 
-    color="warn" 
-    (click)="onDontLoveIts(post)">
-    Don't love it
+    color="warn"
+    >
+    <mat-icon>delete_forever</mat-icon>
   </button>
   </mat-card-actions>
 </mat-card>

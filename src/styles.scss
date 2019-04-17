@@ -1,4 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/pink-bluegrey.css';
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { 
+  height: 100%;
+ }
+body { 
+  margin: 0; 
+  font-family: "Francois One", "Helvetica Neue", sans-serif;
+ }
+
+
+.mat-snack-bar-container {
+  color: #fafafa;
+  background: rgba(0,0,0,.87);
+}
+.mat-simple-snackbar-action button {
+  background: #cccccc2b
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #212121fa!important;
+}

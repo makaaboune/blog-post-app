@@ -1,0 +1,21 @@
+:host {
+  .no-data {
+    height: calc(100% - 128px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    mat-icon {
+      font-size: 125px;
+      width: 125px;
+      height: 125px;
+      color: #212121b5;
+    }
+    h3 {
+      color: #656565;
+      font-size: 22px;
+      font-weight: 500;
+    }
+  }
+}
