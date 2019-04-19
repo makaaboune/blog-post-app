@@ -1,3 +1,4 @@
+
 :host {
     display: block;
     margin: 15px;
@@ -6,11 +7,15 @@
          color: #443e3e;
          transition:all 0.5s ease; 
          border: 1px dashed #404040a3;         
+         .mat-card-title {
+        }
+
          .mat-card-subtitle {
-            color: #212121;
+            color: #424242;
+            font-family: "Francois One", "Helvetica Neue", sans-serif;
         }
         ::ng-deep{
-            .mat-card-header-text{
+            .mat-card-header-text {
                 margin: 0;
                 width: 100%;
                 display: flex;
@@ -19,10 +24,18 @@
         }
         mat-card-actions {
             display: flex;
-            justify-content: space-between
+            justify-content: space-between;
+            *:not(mat-icon) {
+                font-family: "Francois One", "Helvetica Neue", sans-serif;
+            }
+            button {
+                padding: 0px 9px;
+                border: 1px dashed;
+                min-width: 0;
+            }
         }
     }
-    .love-it{
+    .love-it {
         background: #189f2a59;
         color: #187525;
         transition: all 0.5s ease;
@@ -35,36 +48,34 @@
             .mat-badge-content{
                 background-color: #197525;
                 color: #fff;
-                border: 1px dashed #fff;           
+                border: 1px dashed #fff;  
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                font-size: 11px;         
             }
         }
     }
-
-    .dont-love-it{
+    .dont-love-it {
         background: #e8281b7a;
         color: #610c07;  
         transition:all 0.5s ease; 
      }
-    .dont-love-it-button{
+    .dont-love-it-button {
         background: #de291dad;
         color: #ffffff;
         border: 1px dashed #fff;           
         transition: all 0.5s ease;    
         ::ng-deep {
-            .mat-badge-content{
+            .mat-badge-content {
                 background-color: #bf3f35;
                 color: #fff;
                 border: 1px dashed #fff;           
             }
-
         } 
     }
-
     .delete-button {
         background: #c12519d4;
-        padding: 0px 9px;
-        border: 1px dashed;
-        min-width: 0;
     }
 }
 

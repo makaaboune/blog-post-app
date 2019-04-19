@@ -92,6 +92,7 @@ export class PostService {
 
   insertPost(post: Post) {
     this.posts.push(post);
+    // Uncomment this if you want to add same posts quickly
     // this.posts.push(this.firstPost, this.secondPost, this.thirdPost, this.anotherPost);
     this.savePosts();
     this.emitPosts();
