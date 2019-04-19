@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 // Services
 import { PostService } from './services/post/post.service';
 import { AuthService } from './services/auth/auth.service';
+import { DeleteConfirmationDialogComponent } from './dialogs/delete-confirmation-dialog/delete-confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AuthService } from './services/auth/auth.service';
     PostListItemComponent,
     NewPostComponent,
     NavComponent,
-    LoginComponent
+    LoginComponent,
+    DeleteConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,9 @@ import { AuthService } from './services/auth/auth.service';
     PostService,
     AuthService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    DeleteConfirmationDialogComponent
+  ]
 })
 export class AppModule { }
